@@ -1,0 +1,255 @@
+/* Styles everything so padding and margin is calculated into box-sizing*/
+*{
+    box-sizing: border-box;
+}
+
+/* styles etire body with background color, font size, family and color*/
+body{
+    background-color:rgb(231, 228, 228);
+    font-size: 18px;
+    line-height: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+}
+
+/* Specifies that everything in containers should span 100% width up to viewport 980 pixels*/
+.container{
+    width: 85%;
+    max-width: 980 px;
+    margin: 0 auto;
+    clear: both;
+}
+
+/* Here are various h and p stylings*/
+h1, h2, h3, p {
+    margin-bottom: 20px;
+}
+
+p:last-child {
+    margin-bottom:0;
+}
+
+h1{
+    font-weight: bolder;
+    font-size: larger;
+}
+
+
+/* styles everything in the navbarTop id with color and position*/
+#navbarTop{
+    background: #fff;
+    margin:0 0 30px;
+    z-index: 99;
+    color: #fad0f4f5;
+    overflow: auto;
+    border-bottom: 2px solid lightgray;
+    position: fixed;
+    width: 100%;
+}
+
+/* Styles name-logo in header, floats left*/
+#logo {
+    width: 250px;
+    height: 90px;
+    background-color:#fad0f4f5;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color:darkslategray;
+    text-align: center;
+    line-height: 90px;
+    text-decoration: none;
+}
+
+/* styled everything within nav tags to float right*/
+nav {
+    float: right;
+    margin-top: 20px;
+}
+
+/* style the links*/
+nav a{
+    color: #999;
+    text-decoration: none;
+    margin-left: 15px;
+    display: inline-block; /* changes so nav tags don't stack on top of one another but display side by side*/
+    border-left: 1px solid #fad0f4f5; /*Left border creates vertical lines between links*/
+    padding-left: 15px;
+    line-height: 18px;
+}
+
+/* takes away left-border on first link*/
+nav a:first-child {
+    border-left: 0 none;
+}
+
+/*Items inside main area take up 100% of horizontal area - for a header it is the page, for items in a container it is the container; also the content will stop expanding at 640 pixels (max width)*/
+.main-content {
+    background: #fff;
+    padding: 25px;
+    margin:0;
+    width: 100%;
+    max-width: 600px;
+    float: left;
+    border: 1px solid lightgrey;
+}
+
+/*ABOUT ME PAGE*/
+/*Image on 'About Me' Page*/
+img.berries {
+    width: 200 px;
+    height: auto;
+    margin-top: 10px;
+    float: left;
+    margin-right: 25px;   
+}
+
+/* PORTFOLIO PAGE*/
+/* Format portfolio photos*/
+.card-img {
+    height:auto;
+    margin-top: 10px;
+    float: left;
+    margin-right: 25px;
+    margin-left: 25px;
+    opacity: .8;
+    border: 0 none;
+}
+
+/*Position portfolio cards*/
+.portfolio {
+    width: 274 px;
+    overflow: auto;
+    position: relative;
+    float: left;
+    margin: 25px 0 25px;
+}
+
+.portfolio h3 {
+    border-bottom:0;
+    background: #fad0f4cc;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    padding: 15px;
+    width: 200px;
+    line-height: 30px;
+    margin-left: 25px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+/*CONTACT*/
+form{
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* display: block put the blocks under their titles, line-height made blocks taller, width made input blocks span the height of the container*/
+label, input[type=text], input[type=email], textarea{
+    display: block;
+    line-height: 24px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/*Make text area taller*/
+textarea {
+    height: 200px;
+}
+
+/* Format submit button and make the cursor turn into a pointer when it hovers over the button*/
+.btn{
+    background: #fad0f4cc;
+    border: 1 solid darkslategray;
+    color: darkslategray;
+    font-size: 18px;
+    padding: 10px; 30 px;
+    cursor: pointer;
+}
+
+.sidebar {
+    padding: 30px;
+    width: 100%;
+    max-width: 280px;
+}
+
+/*footer*/
+footer {
+    background-color: #fad0f4f5;
+    padding: 15px;
+    clear: both;
+    border-top: 8px solid lightgrey;
+    text-align: center;
+}
+
+/* Check user's media screen-size, if the screen is up to 980 px  keep the main container no larger than 768 px, and the content in the card no wider than 420 px.*/
+@media screen and (max-width: 980px){
+    #main{
+        padding-top: 30px;
+    }
+    .main-content{
+        margin-bottom: 10px
+    }
+    
+    /*each container with a portfolio card spans 50% of its container for two row display, cards span 100% of their portfolio card*/
+    .portfolio{
+        width: 50%;
+    }
+    .card-image{
+        width: 100%;
+        margin-bottom: 20px;
+    } 
+}
+
+@media screen and (max-width: 768px){
+    #main{
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 640px){
+    #navbarTop{
+        position:static;
+    }
+    header.container{
+        padding: 0;
+    }
+    #navbarTop{
+        margin: 0;
+    }
+    #logo, .portfolio-cards, .portfolio {
+        width: 100%;
+    }
+    
+    #spacebar{
+        display: none;
+    }
+    nav{
+        text-align: center;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    nav a{
+        width: 30%;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .portfolio{
+        margin-left: 25%;
+        margin-right:30%;
+    }
+   
+}
+
+@media screen and (max-width: 600px){
+    .portfolio{
+        margin-left: 17%;
+    }
+}
