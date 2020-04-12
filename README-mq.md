@@ -1,5 +1,5 @@
-# Bootstrap-portfolio
-Bootstrap portfolio commentary
+# Css and media queries -portfolio
+Portfolio commentary
 
 DESCRIPTION: The Bootstrap portfolio is a basic html website styled with Bootstrap. This website contains three pages which share the same header, footer, and body structure. After coding those three elements on the index.html page to my liking I copied and pasted them on the other two pages using the index.html code much like a page template where the content inside the card was later adjusted. The main content of each page is housed in a card with a header and a bottom section which contains the important content for each page. 
 
